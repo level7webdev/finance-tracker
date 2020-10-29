@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 
+# Use font-awesome for icons
+gem "font-awesome-rails"
+
 # Use IEX client for external API calls
 gem 'iex-ruby-client'
 
