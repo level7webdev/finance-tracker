@@ -7,7 +7,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item<%= ' active' if request.path == my_portfolio_path %>">
           <%= link_to "My Portfolio", my_portfolio_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
@@ -15,14 +15,14 @@
             Account
           </a>
           <div class="dropdown-menu" aria-labelledby="accountDropdown">
-            <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+            <% if user_signed_in? %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            <% else %>
+              <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+            <% end %>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -30,5 +30,6 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
+
   </div>
 </nav>
