@@ -16,6 +16,10 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="accountDropdown">
             <% if user_signed_in? %>
+              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                <%= fa_icon 'edit' %> Edit profile
+              <% end %>
+              <div class="dropdown-divider"></div>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
             <% else %>
               <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
@@ -24,6 +28,11 @@
             <% end %>
           </div>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-link disabled">
+            <%= fa_icon 'user' %> <%= current_user.full_name %>
+          </li>
+        <% end %>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
