@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if params[:friend].present?
       @friends = User.search(params[:friend])
       @friends = current_user.except_current_user(@friends)
-      if @friends
+      if @friends.any?
         respond_to do |format|
           format.js { render partial: 'users/friends_result' }
         end
