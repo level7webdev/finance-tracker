@@ -22,4 +22,12 @@ class StocksController < ApplicationController
     end
   end
 
+  def update
+    stock = Stock.find(params[:id])
+    stock_update = Stock.new_lookup(stock.ticker)
+    stock.last_price = stock_update.last_price
+    stock.save
+    redirect_to my_portfolio_path
+  end
+
 end
