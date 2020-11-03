@@ -36,7 +36,7 @@
 
               <% if current_user.id == @user.id %>
                 <%= link_to stock_path(stock), method: :patch, class: "btn btn-sm btn-warning" do %>
-                  <%= fa_icon 'dollar' %>
+                  <%= icon('fas', 'sync-alt') %>
                 <% end %>
                 <%= link_to 'Remove', user_stock_path(stock), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
               <% end %>

@@ -20,7 +20,7 @@
           <div class="dropdown-menu" aria-labelledby="accountDropdown">
             <% if user_signed_in? %>
               <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
-                <%= fa_icon 'edit' %> Edit profile
+                <%= icon('fas', 'edit') %> Edit profile
               <% end %>
               <div class="dropdown-divider"></div>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
@@ -33,7 +33,7 @@
         </li>
         <% if user_signed_in? %>
           <li class="nav-link disabled">
-            <%= fa_icon 'user' %> <%= current_user.full_name %>
+            <%= icon('fas', 'user') %> <%= current_user.full_name %>
           </li>
         <% end %>
       </ul>
