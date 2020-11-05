@@ -4,7 +4,7 @@ This is the finance tracker app from the 'Complete Ruby on Rails Developer Cours
 
 ---
 
-[![L7WD-Finance-Tracker](https://heroku-badge.herokuapp.com/?app=l7wd-finance-tracker)](https://l7wd-finance-tracker.herokuapp.com/)
+[![L7WD-Finance-Tracker](https://pyheroku-badge.herokuapp.com/?app=l7wd-finance-tracker)](https://l7wd-finance-tracker.herokuapp.com/)
 
 ---
 
